@@ -1,0 +1,199 @@
+/*Color scheme (in line with Indeed branding):
+Primary color - royal blue: #2164f3
+Secondary color - alice blue: #e5f2ff
+Primary contrast color - orangered: orangered
+Secondary contrast color - orange: ##ffa500
+Background color - whitesmoke: #f5f6f7
+Links on white background  mediumpurple: #7977cc*/
+
+/*Background*/
+body.application {
+    background: #f5f6f7;
+    padding: 85px 20px 0px 20px;
+}
+
+/*Navbar*/
+nav#mainNav {
+    padding-top: 20px;
+    background-color: royalblue;
+    border-color: royalblue;
+    color: white;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: orange;
+}
+i.fa.fa-bars {
+    padding: 0px;
+}
+
+.fa-refresh .fa-search{
+    color: white;
+}
+
+a.navbar-brand{
+    color: white;
+    margin-left: 10px;
+    padding-top: 18px;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{
+    color: orange;
+}
+
+.navbar-toggle {
+    padding: 5px 10px;
+    margin-right: 24px;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: white;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: orange;
+    cursor: pointer;
+    cursor: hand;
+}
+
+a.nav-item-pill-name.introjs-showElement{
+    color: orangered;
+}
+
+.nav-item-pill{
+    float: right;
+    color: white;
+}
+
+.nav-item-pill-name{
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+ul.nav.navbar-nav.navbar-right {
+    margin-right: 10px;
+}
+
+
+/*Tooltips*/
+.introjs-helperNumberLayer {
+  background: orangered; /* Old browsers */
+  background: -webkit-linear-gradient(top, orangered 0%, #E95300 100%); /* Chrome10+,Safari5.1+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, orangered), color-stop(100%, #E95300)); /* Chrome,Safari4+ */
+  background:    -moz-linear-gradient(top, orangered 0%, #E95300 100%); /* FF3.6+ */
+  background:     -ms-linear-gradient(top, orangered 0%, #E95300 100%); /* IE10+ */
+  background:      -o-linear-gradient(top, orangered 0%, #E95300 100%); /* Opera 11.10+ */
+  background:         linear-gradient(to bottom, orangered 0%, #E95300 100%);  /* W3C */
+}
+
+/* Links */
+a{
+    color: mediumpurple;
+}
+
+a:hover{
+    text-decoration: none;
+    color: orange;
+}
+
+/* Changing row text to black so it is visible against background*/
+.dc-chart g.row text {
+    fill: black;
+}
+
+/*chart styling*/
+.chart-wrapper{
+    box-shadow: 1px 2px 2px #e2e2e2;
+}
+
+.chart-title {
+    border-bottom: 1px solid aliceblue;
+}
+
+.keyline{
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: royalblue;
+}
+
+.tagline{
+    font-weight: normal;
+    font-style: italic;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+i{
+    padding-right: 14px;
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 4px;
+}
+
+li {
+    padding-top: 3.4px;
+    padding-bottom: 3px;
+}
+.hit{
+    float: right;
+    padding-right: 4px;
+    font-weight: bold;
+}
+
+/*pie chart styling*/
+#location-pie-chart{
+    padding-top:10px;
+}
+
+.locpiechart{
+    height: 205px;
+}
+
+/* Results tables */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    text-align: left;
+    padding: 1px;
+}
+
+footer {
+    background-color: whitesmoke;
+    padding: 0px 0px;
+    color: royalblue;
+    text-align: center;
+    font-size: 8px;
+}
+
+.footertext{
+    margin-bottom: 2px;
+}
+
+.nmccontact {
+    color: royalblue;
+    padding: 1px;
+}
+
+/*Link to top*/
+a#back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 3px;
+    right: 30px;
+    display:none;
+    background-color: whitesmoke;
+    border: whitesmoke;
+    box-shadow: 1px 2px 2px #e2e2e2;
+}
+
+
+a#back-to-top:hover, a#back-to-top:active{
+    background-color: orange;
+}
+

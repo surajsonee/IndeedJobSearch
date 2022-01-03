@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Developer Job Search</title>
+    <meta name="author" content="Developer Job Search Dashboard">
+    <link rel="icon" href="static/img/magnifiericon.png"/>
+    <link rel="stylesheet" href="static/lib/css/introjs.css"/>
+    <link rel="stylesheet" href="/static/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/lib/css/keen-dashboards.css">
+    <link rel="stylesheet" href="/static/lib/css/dc.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="static/js/loadingbar.js"></script>
+    <link rel="stylesheet" href="static/lib/css/loadingbar.css"/>
+
+</head>
+<body class="application">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="./">Developer Job Search</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item-pill">
+                <a class="nav-item-pill-name" autofocus onclick="javascript:introJs().start();"
+                   data-step="1"
+                   data-intro="Are you looking for a developer job? This dashboard is here to help. Click next to see how it works..."
+                   style="font-weight: normal" data-position="left"><i id="fa-question" class="fa fa-question"></i>
+                    How does this work?</a>
+            </li>
+            <li class="nav-item-pill">
+                <a class="nav-item-pill-name" href="./"><i id="fa-refresh" class="fa fa-refresh"></i> Reset all
+                    filters</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+
+    <!-- /.container-fluid -->
+</nav>
+<div id="outer" class="container-fluid">
+
+    <div class="col-lg-12 col-md-12">
+        <div class="row">
+            <!-- R1 -->
+            <!-- Location -->
+            <div class="col-lg-3 col-md-6">
+                <div class="chart-wrapper" data-step="2"
+                     data-intro="Use this chart to filter on jobs by your preferred location(s). Filtering by location will automatically update the data in the remaining charts to show job posts matching your preferred location(s) only."
+                     style="font-weight: normal" data-position="right">
+                    <div class="chart-title">
+                        <p class="keyline"><i class="fa fa-map-marker"></i>Where can I find a developer job?</p>
+                    </div>
+                    <div class="chart-stage locpiechart">
+                        <div id="location-pie-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Location -->
+            <!-- Role -->
+            <div class="col-lg-3 col-md-6">
+                <div class="chart-wrapper" data-step="3" data-intro="Now that you've filtered by location, you may use this chart to filter on your preferred roles.
+                    In order to help you along, this chart has simplified job posts into 5 key categories (Front end, Back end, full stack, DevOps and Not specified) based on the job title provided. Quite a few ads aren't so easily categorised from just a
+                    job title, so they sit in the 'Not specified' category - you'll be able to find out more from the links
+                    to the full job ad available in the results table."
+                     style="font-weight: normal" data-position="right">
+                    <div class="chart-title">
+                        <p class="keyline"><i class="fa fa-id-card-o"></i>What types of roles are on offer?</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="role-row-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Role -->
+            <!-- Level -->
+            <div class="col-lg-3 col-md-6">
+                <div class="chart-wrapper" data-step="4" data-intro="Use this chart to help you filter by the level of
+                    experience being sought for a developer job. This chart has categorised job posts based on their title and snippet entries -
+                    for further details please click on the link to the full job post in the results table. "
+                     style="font-weight: normal" data-position="right">
+                    <div class="chart-title">
+                        <p class="keyline"><i class="fa fa-code-fork"></i>What level of experience is needed?</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="level-bar-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Level -->
+            <!-- Industry -->
+            <div class="col-lg-3 col-md-6">
+                <div class="chart-wrapper" data-step="5" data-intro="Interested in exploring different industries
+                    employing developers? Use this chart to apply filters and see which employers from your preferred industry are hiring."
+                     style="font-weight: normal" data-position="bottom">
+                    <div class="chart-title">
+                        <p class="keyline"><i class="fa fa-industry"></i>Which industries are hiring developers?</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="industry-row-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Industry -->
+            <!-- EOR1 -->
+
+            <!-- R2 -->
+
+            <!-- Company row -->
+            <div class="col-lg-3 col-md-12">
+                <div class="chart-wrapper" data-step="6" data-intro="This chart identifies the top employers hiring developers
+                    (by number of opportunities advertised on Indeed.com). Click on any preferred employers to see their job adverts in the results table."
+                     style="font-weight: normal" data-position="right">
+                    <div class="chart-title">
+                        <p class="keyline"><i class="fa fa-handshake-o"></i>Who is hiring developers?</p>
+                        <p class="tagline">Top 10 companies based on no. of job posts</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="company-row-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Company row -->
+            <!-- Results table -->
+            <div class="col-lg-6 col-md-12">
+                <div class="chart-wrapper" data-step="7" data-intro="This helpful counter lets you know how many job
+                     posts match your search based on the filters you've applied. Note that this counter will automatically update if you go back and change any of your filters."
+                     style="font-weight: normal" data-position="top">
+                    <div class="chart-title">
+                        <div id="resultslog">
+                            <p class="keyline"><i class="fa fa-check-square-o"></i><span id="total-hits"></span> job
+                                posts match your search</p>
+                            <p class="tagline">Check out your first five results in the table below or click <a
+                                    href="#fulllistofresults">
+                                here </a> to view all <span id="total-hits"></span> posts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-wrapper" data-step="8" data-intro="This table displays your first five results based on your filters,
+                     use the links provided to find out more about any jobs that peak your interest! "
+                     style="font-weight: normal" data-position="top">
+                    <div class="chart-title">
+                        <p class="keyline"><i class="fa fa-list"></i>My first five results</p>
+                        <p class="tagline">The table below shows a summary of your first five results.</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="results-table">
+                            <div class='header'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--Results table-->
+            <!-- Keyword hits -->
+            <div class="col-lg-3 col-md-12">
+                <div class="chart-wrapper" data-step="9" data-intro="This summary table lists the number of times a
+                    keyword (be that a language, framework, tool etc.) has been listed in a post in your results table."
+                     style="font-weight: normal" data-position="top">
+                    <div class="chart-title">
+                        <p class="keyline"><i class="fa fa-thumbs-o-up"></i>Keyword hits</p>
+                        <p class="tagline">Popular languages, tools and frameworks</p>
+                    </div>
+                    <div class="chart-stage">
+                        <ul>
+                            <li><i class="devicon-java-plain"></i> Java: <span class="hit" id="java-hits"></span></li>
+                            <li><i class="devicon-php-plain"></i> PHP: <span class='hit' id="php-hits"></span></li>
+                            <li><i class="devicon-javascript-plain"></i> JavaScript: <span class='hit'
+                                                                                           id="javascript-hits"></span>
+                            </li>
+                            <li><i class="devicon-mysql-plain"></i> SQL: <span class='hit' id="sql-hits"></span></li>
+                            <li><i class="devicon-python-plain"></i> Python: <span class='hit' id="python-hits"></span>
+                            </li>
+                            <li><i class="devicon-dot-net-plain"></i> .NET: <span class='hit' id="net-hits"></span></li>
+                            <li><i class="devicon-amazonwebservices-plain"></i> AWS: <span class='hit'
+                                                                                           id="aws-hits"></span></li>
+                            <li><i class="devicon-angularjs-plain"></i> Angular: <span class='hit'
+                                                                                       id="angular-hits"></span></li>
+                            <li><i class="devicon-wordpress-plain"></i> WordPress: <span class='hit'
+                                                                                         id="wordpress-hits"></span>
+                            </li>
+                            <li><i class="devicon-csharp-plain"></i> C#: <span class='hit' id="c-hits"></span></li>
+                            <span id="fulllistofresults"></span>
+                            <li><i class="devicon-css3-plain"></i> CSS: <span class='hit' id="css-hits"></span></li>
+                            <li><i class="devicon-html5-plain"></i> HTML: <span class='hit' id="html-hits"></span></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Keyword hits
+        </div>
+        <!-- EOR2 -->
+            <!-- R3 -->
+
+            <!-- Full results -->
+            <div class="col-lg-12 col-md-12">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        <p class="keyline"><i class="fa fa-list"></i>Full list of results</p>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="FullResultsTable">
+                            <div class='header'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Full results -->
+            <!-- END OF ROW 3 -->
+
+        </div>
+    </div>
+</div>
+
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"
+   title="Click to return on the top page" data-toggle="tooltip" data-placement="left">
+    <img src="/static/img/scroll-arrow.png"/>
+</a>
+
+<hr>
+<footer>
+    <div class="container">
+        <p class="footertext">This website was designed and built by Nakita McCool.</p>
+        <ul class="list-inline">
+            <li>
+                <a href="mailto:nakitamccool@gmail.com"><i class="nmccontact fa fa-envelope"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="nmccontact fa fa-github"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="nmccontact fa fa-google-plus"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="nmccontact fa fa-linkedin"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="nmccontact fa fa-twitter"></i></a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<script src="/static/lib/js/jquery.min.js"></script>
+<script src="/static/lib/js/bootstrap.min.js"></script>
+<script src="/static/lib/js/crossfilter.js"></script>
+<script src="/static/lib/js/d3.js"></script>
+<script src="/static/lib/js/dc.js"></script>
+<script src="/static/lib/js/queue.js"></script>
+
+<script src="/static/lib/js/keen.min.js"></script>
+<script src="/static/js/graph.js"></script>
+<script src="static/lib/js/intro.js"></script>
+<script src="static/js/backtotopbutton.js"></script>
+</body>
+</html>
