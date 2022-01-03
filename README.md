@@ -90,7 +90,7 @@ containers are responsive, the charts are not fully responsive due to limitation
 
 ## Authors
 
-**Nakita McCool** - This project was completed as part of Code Institute’s Web Development bootcamp in May 2017.
+**Suraj Prasad** 
 
 ## Acknowledgments
 
